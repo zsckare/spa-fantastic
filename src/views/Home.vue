@@ -403,10 +403,10 @@
     <section id="map" class="map-area">
         <div class="mapouter">
             <div class="gmap_canvas">
-                <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=Av.+De+Las+Gaviotas+330,+Real+del+Mezquital,+34199+Durango,+Dgo.&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
             </div>
         </div>
-        <div class="map-bg bg_cover d-none d-lg-block" style="background-image: url(images/map/map-bg.jpg)"></div>
+        <div class="map-bg bg_cover d-none d-lg-block" style="background-image: url(images/maps.jpg)"></div>
     </section>
 
     <!--====== MAP PART ENDS ======-->
