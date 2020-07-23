@@ -67,8 +67,8 @@
                     <div class="col-xl-8 col-lg-9 col-sm-10">
                         <div class="banner-content">
                             <h4 class="sub-title wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1s">Spa Fantastic</h4>
-                            <h1 class="banner-title mt-10 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="2s">Lorem ipsum dolor sit </h1>
-                            <p>I'm baby drinking vinegar hexagon lomo, fam letterpress biodiesel meh shoreditch banjo waistcoat mixtape. </p>
+                            <h1 class="banner-title mt-10 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="2s">#YouFeelFantastic</h1>
+                            <p></p>
                             <a class="banner-contact mt-25 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="2.3s" rel="nofollow" href="https://rebrand.ly/interior-ud"></a>
                         </div> <!-- banner content -->
                     </div>
@@ -89,13 +89,13 @@
                 <div class="col-lg-6">
                     <div class="about-image mt-50 clearfix">
                         <div class="single-image float-left">
-                            <img src="images/about/about-1.png" alt="About">
+                            <img src="https://picsum.photos/420/320?image=0" alt="About">
                         </div> <!-- single image -->
                         <div data-aos="fade-right" class="about-btn">
                             <a class="main-btn" href="#">Nuestra Experiencia nos respalda</a>
                         </div>
                         <div class="single-image image-tow float-right">
-                            <img src="images/about/about-2.png" alt="About">
+                            <img src="https://picsum.photos/420/320?image=1" alt="About">
                         </div> <!-- single image -->
                     </div> <!-- about image -->
                 </div>
@@ -130,21 +130,21 @@
                 <div class="col-lg-4 col-md-6 col-sm-8">
                     <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
                         <div class="services-icon">
-                            <i class="lni-paint-roller"></i>
+                            <i class="fas fa-hands"></i>
                         </div>
                         <div class="services-content mt-15">
                             <h4 class="services-title">Masajes</h4>
-                            <p class="mt-20">Mauris aliquam, turpis sed mattis placerat, justo risus pellentesque quam, id finibus risus arcu eget neque.</p>
+                            <p class="mt-20"></p>
                         </div>
                     </div> <!-- single services -->
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-8">
                     <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.8s">
                         <div class="services-icon">
-                            <i class="lni-blackboard"></i>
+                            <i class="lni lni-spray"></i>
                         </div>
                         <div class="services-content mt-15">
-                            <h4 class="services-title">Otra cosa</h4>
+                            <h4 class="services-title">Limpiezas</h4>
                             <p class="mt-20">Mauris aliquam, turpis sed mattis placerat, justo risus pellentesque quam, id finibus risus arcu eget neque.</p>
                         </div>
                     </div> <!-- single services -->
@@ -152,10 +152,10 @@
                 <div class="col-lg-4 col-md-6 col-sm-8">
                     <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.2s">
                         <div class="services-icon">
-                            <i class="lni-home"></i>
+                            <i class="fas fa-hand-paper"></i>
                         </div>
                         <div class="services-content mt-15">
-                            <h4 class="services-title">Otra Cosa</h4>
+                            <h4 class="services-title">Uñas</h4>
                             <p class="mt-20">Mauris aliquam, turpis sed mattis placerat, justo risus pellentesque quam, id finibus risus arcu eget neque.</p>
                         </div>
                     </div> <!-- single services -->
@@ -163,36 +163,15 @@
                 <div class="col-lg-4 col-md-6 col-sm-8">
                     <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
                         <div class="services-icon">
-                            <i class="lni-briefcase"></i>
+                            <i class="fas fa-hand-sparkles"></i>
                         </div>
                         <div class="services-content mt-15">
-                            <h4 class="services-title">Otra Cosa</h4>
+                            <h4 class="services-title">Pies y Manos</h4>
                             <p class="mt-20">Mauris aliquam, turpis sed mattis placerat, justo risus pellentesque quam, id finibus risus arcu eget neque.</p>
                         </div>
                     </div> <!-- single services -->
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.8s">
-                        <div class="services-icon">
-                            <i class="lni-handshake"></i>
-                        </div>
-                        <div class="services-content mt-15">
-                            <h4 class="services-title">No se que mas poner</h4>
-                            <p class="mt-20">Mauris aliquam, turpis sed mattis placerat, justo risus pellentesque quam, id finibus risus arcu eget neque.</p>
-                        </div>
-                    </div> <!-- single services -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.2s">
-                        <div class="services-icon">
-                            <i class="lni-grow"></i>
-                        </div>
-                        <div class="services-content mt-15">
-                            <h4 class="services-title">Otra cosa</h4>
-                            <p class="mt-20">Mauris aliquam, turpis sed mattis placerat, justo risus pellentesque quam, id finibus risus arcu eget neque.</p>
-                        </div>
-                    </div> <!-- single services -->
-                </div>
+                
             </div> <!-- row -->
         </div> <!-- container -->
     </section>
@@ -206,8 +185,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section-title text-center pb-50">
-                        <h5 class="sub-title mb-15">Featured Works</h5>
-                        <h2 class="title">Projects You May Love</h2>
+                        <h5 class="sub-title mb-15">Galeria</h5>
+                        <h2 class="title">Consintiendo a nuestros clientes</h2>
                     </div> <!-- section title -->
                 </div>
             </div> <!-- row -->
@@ -217,73 +196,64 @@
                 <div class="col-lg-4">
                     <div class="single-project">
                         <div class="project-image">
-                            <img src="images/project/p-1.jpg" alt="Project">
+                            <img src="https://picsum.photos/420/320?image=0" alt="Project">
                         </div>
                         <div class="project-content">
-                            <a class="project-title" href="#">Home Interior Design</a>
+                            <a class="project-title" href="#">titulo</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-project">
                         <div class="project-image">
-                            <img src="images/project/p-2.jpg" alt="Project">
+                            <img src="https://picsum.photos/420/320?image=0" alt="Project">
                         </div>
                         <div class="project-content">
-                            <a class="project-title" href="#">Home Interior Design</a>
+                            <a class="project-title" href="#">titulo</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-project">
                         <div class="project-image">
-                            <img src="images/project/p-3.jpg" alt="Project">
+                            <img src="https://picsum.photos/420/320?image=0" alt="Project">
                         </div>
                         <div class="project-content">
-                            <a class="project-title" href="#">Home Interior Design</a>
+                            <a class="project-title" href="#">titulo</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-project">
                         <div class="project-image">
-                            <img src="images/project/p-4.jpg" alt="Project">
+                            <img src="https://picsum.photos/420/320?image=0" alt="Project">
                         </div>
                         <div class="project-content">
-                            <a class="project-title" href="#">Home Interior Design</a>
+                            <a class="project-title" href="#">titulo</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-project">
                         <div class="project-image">
-                            <img src="images/project/p-5.jpg" alt="Project">
+                            <img src="https://picsum.photos/420/320?image=0" alt="Project">
                         </div>
                         <div class="project-content">
-                            <a class="project-title" href="#">Home Interior Design</a>
+                            <a class="project-title" href="#">titulo</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-project">
                         <div class="project-image">
-                            <img src="images/project/p-2.jpg" alt="Project">
+                            <img src="https://picsum.photos/420/320?image=0" alt="Project">
                         </div>
                         <div class="project-content">
-                            <a class="project-title" href="#">Home Interior Design</a>
+                            <a class="project-title" href="#">titulo</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="single-project">
-                        <div class="project-image">
-                            <img src="images/project/p-4.jpg" alt="Project">
-                        </div>
-                        <div class="project-content">
-                            <a class="project-title" href="#">Home Interior Design</a>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -308,21 +278,21 @@
             <img src="images/testimonial/shape.png" alt="testimonial">
         </div>
         <div class="container">
-            <div class="testimonial-bg bg_cover pt-80 pb-80" style="background-image: url(images/testimonial/testimonial-bg.jpg)">
+            <div class="testimonial-bg bg_cover pt-80 pb-80" style="background-image: url(https://picsum.photos/1000/600?image=0)">
                 <div class="row">
                     <div class="col-xl-4 offset-xl-7 col-lg-5 offset-lg-6 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
                         <div class="testimonial-active">
                             <div class="single-testimonial text-center">
                                 <div class="testimonial-image">
-                                    <img src="images/testimonial/t-1.jpg" alt="Testimonial">
+                                    <img src="https://picsum.photos/420/320?image=0" alt="Testimonial">
                                     <div class="quota">
                                         <i class="lni-quotation"></i>
                                     </div>
                                 </div>
                                 <div class="testimonial-content mt-20">
                                     <p>Lorem ipsum dolor sit amet, ectetur adipiscing elit. Phasellus vel erat ces, commodo lectus eu, finibus diam. m ipsum dolor sit amet, ectetur.</p>
-                                    <h5 class="testimonial-name mt-15">Fajar</h5>
-                                    <span class="sub-title">Random Customer</span>
+                                    <h5 class="testimonial-name mt-15">Cliente</h5>
+                                    <span class="sub-title">Lorem Ipsum</span>
                                 </div>
                             </div> <!-- single-testimonial -->
                             
@@ -335,78 +305,16 @@
 
     <!--====== TESTIMONIAL PART ENDS ======-->
 
-    <!--====== CONTACT PART START ======-->
-
-    <section id="contact" class="contact-area pt-125 pb-130 gray-bg">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section-title text-center pb-20">
-                        <h5 class="sub-title mb-15">Contact us</h5>
-                        <h2 class="title">Get In touch</h2>
-                    </div> <!-- section title -->
-                </div>
-            </div> <!-- row -->
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="contact-form">
-                        <form id="contact-form" action="contact.php" method="post" data-toggle="validator">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="single-form form-group">
-                                        <input type="text" name="name" placeholder="Your Name" data-error="Name is required." required="required">
-                                        <div class="help-block with-errors"></div>
-                                    </div> <!-- single form -->
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="single-form form-group">
-                                        <input type="email" name="email" placeholder="Your Email" data-error="Valid email is required." required="required">
-                                        <div class="help-block with-errors"></div>
-                                    </div> <!-- single form -->
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="single-form form-group">
-                                        <input type="text" name="subject" placeholder="Subject" data-error="Subject is required." required="required">
-                                        <div class="help-block with-errors"></div>
-                                    </div> <!-- single form -->
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="single-form form-group">
-                                        <input type="text" name="phone" placeholder="Phone" data-error="Phone is required." required="required">
-                                        <div class="help-block with-errors"></div>
-                                    </div> <!-- single form -->
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="single-form form-group">
-                                        <textarea placeholder="Your Mesaage" name="message" data-error="Please,leave us a message." required="required"></textarea>
-                                        <div class="help-block with-errors"></div>
-                                    </div> <!-- single form -->
-                                </div>
-                                <p class="form-message"></p>
-                                <div class="col-md-12">
-                                    <div class="single-form form-group text-center">
-                                        <button type="submit" class="main-btn">send message</button>
-                                    </div> <!-- single form -->
-                                </div>
-                            </div> <!-- row -->
-                        </form>
-                    </div> <!-- row -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-    </section>
-
-    <!--====== CONTACT PART ENDS ======-->
 
     <!--====== MAP PART START ======-->
 
     <section id="map" class="map-area">
         <div class="mapouter">
             <div class="gmap_canvas">
-                <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=Av.+De+Las+Gaviotas+330,+Real+del+Mezquital,+34199+Durango,+Dgo.&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=Plaza+de+Armas+Durango,+Zona+Centro,+34000+Durango,+Dgo.&t=&z=18&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
             </div>
         </div>
-        <div class="map-bg bg_cover d-none d-lg-block" style="background-image: url(images/maps.jpg)"></div>
+        <div class="map-bg bg_cover d-none d-lg-block" style="background-image: url(https://picsum.photos/1000/600?image=0)"></div>
     </section>
 
     <!--====== MAP PART ENDS ======-->
@@ -429,7 +337,7 @@
                                             <i class="lni-phone-handset"></i>
                                         </div>
                                         <div class="info-content">
-                                            <p>+1880 123 456 789</p>
+                                            <p>6181234567</p>
                                         </div>
                                     </div> <!-- single info -->
                                 </li>
@@ -439,7 +347,7 @@
                                             <i class="lni-envelope"></i>
                                         </div>
                                         <div class="info-content">
-                                            <p>contact@yourmail.com</p>
+                                            <p>correo@gmail.com</p>
                                         </div>
                                     </div> <!-- single info -->
                                 </li>
@@ -449,7 +357,7 @@
                                             <i class="lni-map"></i>
                                         </div>
                                         <div class="info-content">
-                                            <p>1234 Avenue New York, US</p>
+                                            <p>Real del Mezquital</p>
                                         </div>
                                     </div> <!-- single info -->
                                 </li>
@@ -462,44 +370,7 @@
                             </ul>
                         </div> <!-- footer logo -->
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="footer-link mt-45">
-                            <div class="f-title">
-                                <h4 class="title">Essential Links</h4>
-                            </div>
-                            <ul class="mt-15">
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Projects</a></li>
-                                <li><a href="#">Support</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="footer-link mt-45">
-                            <div class="f-title">
-                                <h4 class="title">Services</h4>
-                            </div>
-                            <ul class="mt-15">
-                                <li><a href="#">Product Design</a></li>
-                                <li><a href="#">Research</a></li>
-                                <li><a href="#">Office Management</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-5 col-sm-8">
-                        <div class="footer-newsleter mt-45">
-                            <div class="f-title">
-                                <h4 class="title">Newsleter</h4>
-                            </div>
-                            <p class="mt-15">Lorem ipsum dolor sit amet, consec tetur adipiscing elit.</p>
-                            <form action="#">
-                                <div class="newsleter mt-20">
-                                    <input type="email" placeholder="info@contact.com">
-                                    <button><i class="lni-angle-double-right"></i></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                   
                 </div> <!-- row -->
             </div> <!-- container -->
         </div> <!-- footer widget -->
@@ -508,7 +379,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="copyright text-center">
-                            <p>Template Designed and Developed by <a href="https://uideck.com" rel="nofollow">UIdeck</a></p>
+                            
                         </div> <!-- copyright -->
                     </div>
                 </div> <!-- row -->
