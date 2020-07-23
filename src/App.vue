@@ -8,7 +8,16 @@
     <router-view/>
   </div>
 </template>
+<script>
 
+export default {
+  data:function(){
+    return{
+      isAuthenticated:false
+    }
+  }
+}
+</script>>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -31,3 +40,4 @@
   color: #42b983;
 }
 </style>
+

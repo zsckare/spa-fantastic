@@ -8,8 +8,8 @@ new Vue({
   router,
   render: h => h(App),
   computed: { 
-    isAuthenticated() {
+    /* isAuthenticated() {
       return this.$store.getters.isAuthenticated
-    },
+    }, */
   },
 }).$mount('#app')

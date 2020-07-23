@@ -55,21 +55,125 @@
         <div class="col-lg-6 col-sm-8 " >
             <div class="card card-custom bg-white border-white border-0">
                 <div class="card-custom-img" style="background-image: url(images/banner-spa.jpg);"></div>
-                    <div class="card-custom-avatar">
-                        <img class="img-fluid" src="images/logo.png" alt="Avatar" />
+                    <div class="card-custom-avatar" >
+                        <img class="img-fluid" src="images/logo.png" alt="Avatar" style="background-color:white" />
                     </div>
                 <div class="card-body" style="overflow-y: auto">
                     <h4 class="card-title">Encuesta de Calidad</h4>
-                    <p class="card-text"></p>
+                    
+                    <div class="" v-if="block === 0">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="">Nombre</label>
+                                    <input type="text" class="form-control" v-model="nombre">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="">Edad</label>
+                                    <input type="text" class="form-control" v-model="edad">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Sexo</label>
+                                    <select class="form-control" id="exampleFormControlSelect1" v-model="sexo">
+                                    <option value="FEMENINO">FEMENINO</option>
+                                    <option value="MASCULINO">MASCULINO</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="">Estatura</label>
+                                    <input type="text" class="form-control" v-model="estatura">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="">Peso</label>
+                                    <input type="text" class="form-control" v-model="peso" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="">Estado Civil</label>
+                                    <input type="text" class="form-control" v-model="estadoCivil">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="">Direccion</label>
+                                    <input type="text" class="form-control" v-model="direccion">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="">Telefono</label>
+                                    <input type="text" class="form-control" v-model="numero" >
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- select main service -->
+                    <div class="row " v-if="block === 1">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="center-text">Tipo de servicio</h4>   
+                                </div>
+                            </div>
+                            <div class="row"  v-bind:key="service.name" v-for="(service,index) in servicios">
+                                <div class="col">
+                                    <button class="btn btn-rosa" style="min-width:300px; margin-top:10px" @click="selectService(index)"> {{service.name}} </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- end select main service -->
+
+                    <!-- start select subservice -->
+                    <div class="row " v-if="block === 2 ">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="center-text"> {{servicios[selectedServiceIndex].name}} </h4>   
+                                </div>
+                            </div>
+                            <div class="row" :key="service" v-for="(service) in servicios[selectedServiceIndex].items ">
+                                <div class="col">
+                                    <button class="btn btn-rosa" style="min-width:300px; margin-top:10px" @click="selectSubServiceF(service)"> {{service}} </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-footer" style="background: inherit; border-color: inherit;">
-                    <a href="#" class="btn btn-rosa">Anterior</a> 
-                    <a href="#" class="btn btn-outline-primary" style="margin-left:5px">Siguiente</a>
+                    <a href="#" class="btn btn-rosa" v-if="block !=0" @click="goBack">Anterior</a> 
+                    <a class="btn btn-outline-primary" style="margin-left:5px" @click="nextSection">Siguiente</a>
                 </div>
             </div>
         </div>
        
     </div>
+    
   </div>
 </template>
 
@@ -81,8 +185,9 @@ export default {
   name: 'Quiz',
   components: {
   },
-  data:{
-      quiz:{
+  data:function(){
+      return{
+          block:0,
           nombre:'',
           edad:'',
           sexo:'',
@@ -90,36 +195,100 @@ export default {
           peso:'',
           estadoCivil:'',
           direccion:'',
-          numero:'',
-          servicios:{
-              masajes:{
+          numero:'',          
+        selectedService:[],
+        selectedSubService:'',
+        selectedServiceIndex:0,
+        servicios:[
+            {
+                name:'MASAJE',
+                items:[
+                  'DECONTRACTURANTE',
+                  'ESPALDA',
+                  'PIERNAS',
+                  'BRAZO',
+                  'MANOS',
+                  'PIES',
+                  'CARA',
+                  'RELAJANTE',
+                  'CUERPO COMPLETO',
+                  'DORSO',
+                  'TORSO',
+                  'ABDOMEN',
+                  'ANITI EXTREÑIMIENTO'
+              ]
+            },
+            {
+                name:'LIMPIEZAS',
+                items:[
+                'FACIAL',
+                'OIDOS',
+                'ESPALDA'
+              ]
+            },
+            {
+                name:'UÑAS',
+                items:[
+                'GELISH',
+                'ACRILICAS'
+              ]
+            },
+            {
+                name:'DEPILACION',
+                items:[
+                'BOZO',
+                'CEJA',
+                'BIKINI',
+                'MEDIA PIERNA',
+                'PIERNA COMPLETA'
+              ]
 
-              },
-              limpiezas:{
-
-              },
-              nails:{
-
-              },
-              depilacion:{
-
-              },
-              piesymanos:{
-                  
-              }
-          }
-
+            },
+            {
+                name: ' PIES Y MANOS',
+                items:[
+                'MANICURA',
+                'PEDICURA'
+              ]
+            }
+        ]
+      }
+  },
+  methods:{
+      nextSection(){
+          this.block = this.block + 1
+      },
+      goBack(){
+          this.block = this.block - 1
+      },
+      selectService(index){
+          this.selectedServiceIndex = index
+          
+          this.selectService = this.servicios[index]
+          console.log(this.selectService)
+          this.block = this.block + 1
+      },
+      selectSubServiceF(servicio){
+          this.selectedSubService = servicio
+          this.block = this.block + 1
       }
   }
 
 }
 </script>
 
-<style >
+<style>
+
 .btn-rosa{
     background-color: #f9c3cc;
     color:white;
     text-shadow: 2px 2px 2px #000000;
+}
+.btn-rosa:hover{
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+ text-shadow: 0px #000000;
 }
 .card-custom {
   overflow: hidden;
