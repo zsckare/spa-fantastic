@@ -89,13 +89,13 @@
                 <div class="col-lg-6">
                     <div class="about-image mt-50 clearfix">
                         <div class="single-image float-left">
-                            <img src="images/about/about-1.png" alt="About">
+                            <img src="https://picsum.photos/420/320?image=0" alt="About">
                         </div> <!-- single image -->
                         <div data-aos="fade-right" class="about-btn">
                             <a class="main-btn" href="#">Nuestra Experiencia nos respalda</a>
                         </div>
                         <div class="single-image image-tow float-right">
-                            <img src="images/about/about-2.png" alt="About">
+                            <img src="https://picsum.photos/420/320?image=1" alt="About">
                         </div> <!-- single image -->
                     </div> <!-- about image -->
                 </div>
@@ -217,73 +217,64 @@
                 <div class="col-lg-4">
                     <div class="single-project">
                         <div class="project-image">
-                            <img src="images/project/p-1.jpg" alt="Project">
+                            <img src="https://picsum.photos/420/320?image=0" alt="Project">
                         </div>
                         <div class="project-content">
-                            <a class="project-title" href="#">Home Interior Design</a>
+                            <a class="project-title" href="#">titulo</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-project">
                         <div class="project-image">
-                            <img src="images/project/p-2.jpg" alt="Project">
+                            <img src="https://picsum.photos/420/320?image=0" alt="Project">
                         </div>
                         <div class="project-content">
-                            <a class="project-title" href="#">Home Interior Design</a>
+                            <a class="project-title" href="#">titulo</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-project">
                         <div class="project-image">
-                            <img src="images/project/p-3.jpg" alt="Project">
+                            <img src="https://picsum.photos/420/320?image=0" alt="Project">
                         </div>
                         <div class="project-content">
-                            <a class="project-title" href="#">Home Interior Design</a>
+                            <a class="project-title" href="#">titulo</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-project">
                         <div class="project-image">
-                            <img src="images/project/p-4.jpg" alt="Project">
+                            <img src="https://picsum.photos/420/320?image=0" alt="Project">
                         </div>
                         <div class="project-content">
-                            <a class="project-title" href="#">Home Interior Design</a>
+                            <a class="project-title" href="#">titulo</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-project">
                         <div class="project-image">
-                            <img src="images/project/p-5.jpg" alt="Project">
+                            <img src="https://picsum.photos/420/320?image=0" alt="Project">
                         </div>
                         <div class="project-content">
-                            <a class="project-title" href="#">Home Interior Design</a>
+                            <a class="project-title" href="#">titulo</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="single-project">
                         <div class="project-image">
-                            <img src="images/project/p-2.jpg" alt="Project">
+                            <img src="https://picsum.photos/420/320?image=0" alt="Project">
                         </div>
                         <div class="project-content">
-                            <a class="project-title" href="#">Home Interior Design</a>
+                            <a class="project-title" href="#">titulo</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="single-project">
-                        <div class="project-image">
-                            <img src="images/project/p-4.jpg" alt="Project">
-                        </div>
-                        <div class="project-content">
-                            <a class="project-title" href="#">Home Interior Design</a>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -308,21 +299,21 @@
             <img src="images/testimonial/shape.png" alt="testimonial">
         </div>
         <div class="container">
-            <div class="testimonial-bg bg_cover pt-80 pb-80" style="background-image: url(images/testimonial/testimonial-bg.jpg)">
+            <div class="testimonial-bg bg_cover pt-80 pb-80" style="background-image: url(https://picsum.photos/1000/600?image=0)">
                 <div class="row">
                     <div class="col-xl-4 offset-xl-7 col-lg-5 offset-lg-6 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
                         <div class="testimonial-active">
                             <div class="single-testimonial text-center">
                                 <div class="testimonial-image">
-                                    <img src="images/testimonial/t-1.jpg" alt="Testimonial">
+                                    <img src="https://picsum.photos/420/320?image=0" alt="Testimonial">
                                     <div class="quota">
                                         <i class="lni-quotation"></i>
                                     </div>
                                 </div>
                                 <div class="testimonial-content mt-20">
                                     <p>Lorem ipsum dolor sit amet, ectetur adipiscing elit. Phasellus vel erat ces, commodo lectus eu, finibus diam. m ipsum dolor sit amet, ectetur.</p>
-                                    <h5 class="testimonial-name mt-15">Fajar</h5>
-                                    <span class="sub-title">Random Customer</span>
+                                    <h5 class="testimonial-name mt-15">Cliente</h5>
+                                    <span class="sub-title">Lorem Ipsum</span>
                                 </div>
                             </div> <!-- single-testimonial -->
                             
@@ -341,10 +332,10 @@
     <section id="map" class="map-area">
         <div class="mapouter">
             <div class="gmap_canvas">
-                <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=university%20of%20san%20francisco&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=Plaza+de+Armas+Durango,+Zona+Centro,+34000+Durango,+Dgo.&t=&z=18&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
             </div>
         </div>
-        <div class="map-bg bg_cover d-none d-lg-block" style="background-image: url(images/map/map-bg.jpg)"></div>
+        <div class="map-bg bg_cover d-none d-lg-block" style="background-image: url(https://picsum.photos/1000/600?image=0)"></div>
     </section>
 
     <!--====== MAP PART ENDS ======-->
@@ -367,7 +358,7 @@
                                             <i class="lni-phone-handset"></i>
                                         </div>
                                         <div class="info-content">
-                                            <p>+1880 123 456 789</p>
+                                            <p>6181234567</p>
                                         </div>
                                     </div> <!-- single info -->
                                 </li>
@@ -377,7 +368,7 @@
                                             <i class="lni-envelope"></i>
                                         </div>
                                         <div class="info-content">
-                                            <p>contact@yourmail.com</p>
+                                            <p>correo@gmail.com</p>
                                         </div>
                                     </div> <!-- single info -->
                                 </li>
@@ -387,7 +378,7 @@
                                             <i class="lni-map"></i>
                                         </div>
                                         <div class="info-content">
-                                            <p>1234 Avenue New York, US</p>
+                                            <p>Real del Mezquital</p>
                                         </div>
                                     </div> <!-- single info -->
                                 </li>
@@ -400,44 +391,7 @@
                             </ul>
                         </div> <!-- footer logo -->
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="footer-link mt-45">
-                            <div class="f-title">
-                                <h4 class="title">Essential Links</h4>
-                            </div>
-                            <ul class="mt-15">
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Projects</a></li>
-                                <li><a href="#">Support</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="footer-link mt-45">
-                            <div class="f-title">
-                                <h4 class="title">Services</h4>
-                            </div>
-                            <ul class="mt-15">
-                                <li><a href="#">Product Design</a></li>
-                                <li><a href="#">Research</a></li>
-                                <li><a href="#">Office Management</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-5 col-sm-8">
-                        <div class="footer-newsleter mt-45">
-                            <div class="f-title">
-                                <h4 class="title">Newsleter</h4>
-                            </div>
-                            <p class="mt-15">Lorem ipsum dolor sit amet, consec tetur adipiscing elit.</p>
-                            <form action="#">
-                                <div class="newsleter mt-20">
-                                    <input type="email" placeholder="info@contact.com">
-                                    <button><i class="lni-angle-double-right"></i></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                   
                 </div> <!-- row -->
             </div> <!-- container -->
         </div> <!-- footer widget -->
@@ -446,7 +400,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="copyright text-center">
-                            <p>Template Designed and Developed by <a href="https://uideck.com" rel="nofollow">UIdeck</a></p>
+                            
                         </div> <!-- copyright -->
                     </div>
                 </div> <!-- row -->

@@ -52,7 +52,7 @@
     </header>
 
     <div class="row d-flex justify-content-center" style="margin-top:4em">
-        <div class="col-6 " >
+        <div class="col-lg-6 col-sm-8 " >
             <div class="card card-custom bg-white border-white border-0">
                 <div class="card-custom-img" style="background-image: url(images/banner-spa.jpg);"></div>
                     <div class="card-custom-avatar">
