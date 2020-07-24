@@ -257,6 +257,7 @@
                 <div class="card-footer" style="background: inherit; border-color: inherit;">
                     <a href="#" class="btn btn-rosa" v-if="block !=0" @click="goBack">Anterior</a> 
                     <a class="btn btn-outline-primary" style="margin-left:5px" @click="nextSection">Siguiente</a>
+                    
                 </div>
             </div>
         </div>
@@ -268,8 +269,8 @@
 
 <script>
 // @ is an alias to /src
-
-
+import firebase from "../firebaseConfig";
+const db = firebase.firestore();
 export default {
   name: 'Quiz',
   components: {
@@ -445,6 +446,17 @@ export default {
       selectSubServiceF(servicio){
           this.selectedSubService = servicio
           this.block = this.block + 1
+      },
+      saveQuiz(){
+          db.collection("quiz")
+          .add({readed:false})
+          .then(() => {
+            console.log("Document successfully written!");
+            
+          })
+          .catch((error) => {
+            console.error("Error writing document: ", error);
+          });
       }
   }
 
