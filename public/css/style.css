@@ -1360,3 +1360,6 @@ p.form-message.error {
   .back-to-top:hover {
     color: #EB3656;
     background-color: #fff; }
+.toUpperCase{
+  text-transform: uppercase;
+}

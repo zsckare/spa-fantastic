@@ -164,6 +164,51 @@
                             </div>
                         </div>
                     </div>
+                    <!-- end select subservice -->
+
+                    <!-- start alimentacion -->
+                     <div class="row " v-if="block === 3 ">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="center-text"> EXPLÍCANOS TU ALIMENTACIÓN REGULAR </h4>   
+                                </div>
+                            </div>
+                            <div class="row" :key="alimento.name" v-for="(alimento,index) in alimentos ">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h3 class="toUpperCase">{{alimento.name}}</h3>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                           <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" :id="index+'a'" value="Diario" v-model="alimentos[index].value">
+                                                <label class="form-check-label" :for="index+'a'">Diario</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" :id="index+'aa'" value="Cada tercer dia" v-model="alimentos[index].value">
+                                                <label class="form-check-label" :for="index+'aa'">Cada tercer dia</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" :id="index+'aaa'" value="Semanal" v-model="alimentos[index].value">
+                                                <label class="form-check-label" :for="index+'aaa'">Semanal</label>
+                                            </div>
+
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" :id="index+'aaaa'" value="Mensual" v-model="alimentos[index].value">
+                                                <label class="form-check-label" :for="index+'aaaa'">Mensual</label>
+                                            </div>
+                                            <br>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end alimentacion -->
                 </div>
                 <div class="card-footer" style="background: inherit; border-color: inherit;">
                     <a href="#" class="btn btn-rosa" v-if="block !=0" @click="goBack">Anterior</a> 
@@ -251,6 +296,90 @@ export default {
                 'PEDICURA'
               ]
             }
+        ],
+        alimentos:[
+            {
+                name:'verduras',
+                value:''
+            },
+            {
+                name:'frutas',
+                value:''
+            },
+            {
+                name:'frituras',
+                value:''
+            },
+            {
+                name:'carnes',
+                value:''
+            },
+            {
+                name:'pastas',
+                value:''
+            },
+            {
+                name:'pastel',
+                value:''
+            },
+            {
+                name:'mariscos',
+                value:''
+            },
+            {
+                name:'chocolates',
+                value:''
+            },
+            {
+                name:'pan',
+                value:''
+            },
+            {
+                name:'pescado',
+                value:''
+            }
+        ],
+        actividadFisica:[
+            {
+                name:'caminar',
+                value:''
+            },
+            {
+                name:'trotar',
+                value:''
+            },
+            {
+                name:'correr',
+                value:''
+            },
+            {
+                name:'aerobics',
+                value:''
+            },
+            {
+                name:'zumba',
+                value:''
+            },
+            {
+                name:'gym',
+                value:''
+            },
+            {
+                name:'natacion',
+                value:''
+            },
+            {
+                name:'pilates',
+                value:''
+            },
+            {
+                name:'fitness',
+                value:''
+            },
+            {
+                name:'cardio',
+                value:''
+            }
         ]
       }
   },
@@ -334,5 +463,61 @@ box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
   width: 100px;
   height: 100px;
 }
+
+/* estilos radio button */
+
+  .formulario h2 {
+    font-size: 16px;
+    color: #001F3F;
+    margin-bottom: 20px;
+    margin-left: 20px; }
+  .formulario > div {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc; }
+  .formulario .radio label,
+  .formulario .checkbox label {
+    display: inline-block;
+    cursor: pointer;
+    color: #FF4136;
+    position: relative;
+    padding: 5px 15px 5px 51px;
+    font-size: 1em;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .formulario .radio label:hover,
+    .formulario .checkbox label:hover {
+      background: rgba(255, 65, 54, 0.1); }
+    .formulario .radio label:before,
+    .formulario .checkbox label:before {
+      content: "";
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      left: 15px;
+      border-radius: 50%;
+      background: none;
+      border: 3px solid #FF4136; }
+  .formulario input[type="radio"] {
+    display: none; }
+    .formulario input[type="radio"]:checked + label:before {
+      display: none; }
+    .formulario input[type="radio"]:checked + label {
+      padding: 5px 15px;
+      background: #FF4136;
+      border-radius: 2px;
+      color: #fff; }
+  .formulario .checkbox label:before {
+    border-radius: 3px; }
+  .formulario .checkbox input[type="checkbox"] {
+    display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label:before {
+      display: none; }
+    .formulario .checkbox input[type="checkbox"]:checked + label {
+      background: #FF4136;
+      color: #fff;
+      padding: 5px 15px; }
 
 </style>
