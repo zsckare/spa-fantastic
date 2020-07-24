@@ -1,6 +1,7 @@
 <template>
   <div class="quiz">
     
+
     <header id="home" class="header-area pt-100">
 
         <div class="shape header-shape-one">
@@ -174,7 +175,7 @@
                                     <h4 class="center-text"> EXPLÍCANOS TU ALIMENTACIÓN REGULAR </h4>   
                                 </div>
                             </div>
-                            <div class="row" :key="alimento.name" v-for="(alimento,index) in alimentos ">
+                            <div class="row custom-border" :key="alimento.name" v-for="(alimento,index) in alimentos ">
                                 <div class="col">
                                     <div class="row">
                                         <div class="col">
@@ -183,20 +184,20 @@
                                     </div>
                                     <div class="row">
                                         <div class="col">
-                                           <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" :id="index+'a'" value="Diario" v-model="alimentos[index].value">
-                                                <label class="form-check-label" :for="index+'a'">Diario</label>
+                                           <div class="md-radio md-radio-inline">
+                                                <input class="" type="radio" :id="index+'a'" value="Diario" v-model="alimentos[index].value">
+                                                <label class="" :for="index+'a'">Diario</label>
                                             </div>
-                                            <div class="form-check form-check-inline">
+                                            <div class="md-radio md-radio-inline">
                                                 <input class="form-check-input" type="radio" :id="index+'aa'" value="Cada tercer dia" v-model="alimentos[index].value">
                                                 <label class="form-check-label" :for="index+'aa'">Cada tercer dia</label>
                                             </div>
-                                            <div class="form-check form-check-inline">
+                                            <div class="md-radio md-radio-inline">
                                                 <input class="form-check-input" type="radio" :id="index+'aaa'" value="Semanal" v-model="alimentos[index].value">
                                                 <label class="form-check-label" :for="index+'aaa'">Semanal</label>
                                             </div>
 
-                                            <div class="form-check form-check-inline">
+                                            <div class="md-radio md-radio-inline">
                                                 <input class="form-check-input" type="radio" :id="index+'aaaa'" value="Mensual" v-model="alimentos[index].value">
                                                 <label class="form-check-label" :for="index+'aaaa'">Mensual</label>
                                             </div>
@@ -209,6 +210,49 @@
                         </div>
                     </div>
                     <!-- end alimentacion -->
+
+                    <!-- start fisic -->
+                    <div class="row " v-if="block === 4 ">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <h4 class="center-text"> EXPLÍCANOS TU ACTIVACIÓN FÍSICA REGULAR  </h4>   
+                                </div>
+                            </div>
+                            <div class="row custom-border" :key="alimento.name" v-for="(alimento,index) in actividadFisica ">
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h3 class="toUpperCase">{{alimento.name}}</h3>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                           <div class="md-radio md-radio-inline">
+                                                <input class="" type="radio" :id="index+'a'" value="Diario" v-model="alimentos[index].value">
+                                                <label class="" :for="index+'a'">Diario</label>
+                                            </div>
+                                            <div class="md-radio md-radio-inline">
+                                                <input class="form-check-input" type="radio" :id="index+'aa'" value="Cada tercer dia" v-model="alimentos[index].value">
+                                                <label class="form-check-label" :for="index+'aa'">Cada tercer dia</label>
+                                            </div>
+                                            <div class="md-radio md-radio-inline">
+                                                <input class="form-check-input" type="radio" :id="index+'aaa'" value="Semanal" v-model="alimentos[index].value">
+                                                <label class="form-check-label" :for="index+'aaa'">Semanal</label>
+                                            </div>
+
+                                            <div class="md-radio md-radio-inline">
+                                                <input class="form-check-input" type="radio" :id="index+'aaaa'" value="Mensual" v-model="alimentos[index].value">
+                                                <label class="form-check-label" :for="index+'aaaa'">Mensual</label>
+                                            </div>
+                                            <br>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-footer" style="background: inherit; border-color: inherit;">
                     <a href="#" class="btn btn-rosa" v-if="block !=0" @click="goBack">Anterior</a> 
@@ -386,6 +430,7 @@ export default {
   methods:{
       nextSection(){
           this.block = this.block + 1
+          document.documentElement.scrollTop = 0;
       },
       goBack(){
           this.block = this.block - 1
@@ -465,59 +510,93 @@ box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
 }
 
 /* estilos radio button */
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@keyframes ripple {
+  0% {
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);
+  }
+  50% {
+    box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    box-shadow: 0px 0px 0px 15px rgba(0, 0, 0, 0);
+  }
+}
+.md-radio {
+  margin: 16px 0;
+}
+.md-radio.md-radio-inline {
+  display: inline-block;
+}
+.md-radio input[type="radio"] {
+  display: none;
+}
+.md-radio input[type="radio"]:checked + label:before {
+  border-color: #337ab7;
+  animation: ripple 0.2s linear forwards;
+}
+.md-radio input[type="radio"]:checked + label:after {
+  transform: scale(1);
+}
+.md-radio label {
+  display: inline-block;
+  min-height: 20px;
+  position: relative;
+  padding: 0 30px;
+  margin-bottom: 0;
+  cursor: pointer;
+  vertical-align: bottom;
+}
+.md-radio label:before, .md-radio label:after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  transition-property: transform, border-color;
+}
+.md-radio label:before {
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.54);
+}
+.md-radio label:after {
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  transform: scale(0);
+  background: #337ab7;
+}
 
-  .formulario h2 {
-    font-size: 16px;
-    color: #001F3F;
-    margin-bottom: 20px;
-    margin-left: 20px; }
-  .formulario > div {
-    padding: 20px 0;
-    border-bottom: 1px solid #ccc; }
-  .formulario .radio label,
-  .formulario .checkbox label {
-    display: inline-block;
-    cursor: pointer;
-    color: #FF4136;
-    position: relative;
-    padding: 5px 15px 5px 51px;
-    font-size: 1em;
-    border-radius: 5px;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease; }
-    .formulario .radio label:hover,
-    .formulario .checkbox label:hover {
-      background: rgba(255, 65, 54, 0.1); }
-    .formulario .radio label:before,
-    .formulario .checkbox label:before {
-      content: "";
-      display: inline-block;
-      width: 17px;
-      height: 17px;
-      position: absolute;
-      left: 15px;
-      border-radius: 50%;
-      background: none;
-      border: 3px solid #FF4136; }
-  .formulario input[type="radio"] {
-    display: none; }
-    .formulario input[type="radio"]:checked + label:before {
-      display: none; }
-    .formulario input[type="radio"]:checked + label {
-      padding: 5px 15px;
-      background: #FF4136;
-      border-radius: 2px;
-      color: #fff; }
-  .formulario .checkbox label:before {
-    border-radius: 3px; }
-  .formulario .checkbox input[type="checkbox"] {
-    display: none; }
-    .formulario .checkbox input[type="checkbox"]:checked + label:before {
-      display: none; }
-    .formulario .checkbox input[type="checkbox"]:checked + label {
-      background: #FF4136;
-      color: #fff;
-      padding: 5px 15px; }
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f0f0f0;
+  position: absolute;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+}
+
+section {
+  background: white;
+  margin: 0 auto;
+  padding: 4em;
+  max-width: 800px;
+}
+section h1 {
+  margin: 0 0 2em;
+}
+section h3 {
+  margin: 1.5em 0 0;
+}
 
 </style>

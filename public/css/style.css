@@ -1363,3 +1363,9 @@ p.form-message.error {
 .toUpperCase{
   text-transform: uppercase;
 }
+
+.custom-border{
+  border-bottom-style: solid;
+  border-bottom-width:1px;
+  border-color: #646464; 
+}
