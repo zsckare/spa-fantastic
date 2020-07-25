@@ -20,6 +20,11 @@ Vue.use(VueRouter)
     path: '/encuesta',
     name: 'Quiz',
     component: () => import( '../views/Quiz.vue')
+  },
+  {
+    path: '/agendar-cita',
+    name: 'NewAppointment',
+    component: () => import( '../views/NewAppointment.vue')
   }
 ]
 

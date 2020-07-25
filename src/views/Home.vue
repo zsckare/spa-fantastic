@@ -53,7 +53,7 @@
                                 </ul> <!-- navbar nav -->
                             </div>
                             <div class="navbar-btn ml-20 d-none d-sm-block">
-                                <a class="main-btn" href="#"><i class="lni-phone"></i> 6181234567 </a>
+                                <a class="main-btn" @click="sendToNewCita"><i class="lni-calendar"></i> Agendar cita </a>
                             </div>
                         </nav> <!-- navbar -->
                     </div>
@@ -419,6 +419,11 @@
 export default {
   name: 'Home',
   components: {
+  },
+  methods:{
+      sendToNewCita(){
+          this.$router.push('agendar-cita');
+      }
   }
 }
 </script>

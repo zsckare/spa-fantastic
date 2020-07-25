@@ -60,7 +60,7 @@
                         <img class="img-fluid" src="images/logo.png" alt="Avatar" style="background-color:white" />
                     </div>
                 <div class="card-body" style="overflow-y: auto">
-                    <h4 class="card-title">Encuesta de Calidad</h4>
+                    <h4 class="card-title">Encuesta de Servicio</h4>
                     
                     <div class="" v-if="block === 0">
                         <div class="row">
@@ -185,7 +185,7 @@
                                     <div class="row">
                                         <div class="col">
                                            <div class="md-radio md-radio-inline">
-                                                <input class="" type="radio" :id="index+'a'" value="Diario" v-model="alimentos[index].value">
+                                                <input class="" type="radio" :id="index+'a'" value="Diario" v-model="alimentos[index].value" checked>
                                                 <label class="" :for="index+'a'">Diario</label>
                                             </div>
                                             <div class="md-radio md-radio-inline">
@@ -229,7 +229,7 @@
                                     <div class="row">
                                         <div class="col">
                                            <div class="md-radio md-radio-inline">
-                                                <input class="" type="radio" :id="index+'a'" value="Diario" v-model="alimentos[index].value">
+                                                <input class="" type="radio" :id="index+'a'" value="Diario" v-model="alimentos[index].value" checked>
                                                 <label class="" :for="index+'a'">Diario</label>
                                             </div>
                                             <div class="md-radio md-radio-inline">
@@ -253,10 +253,20 @@
                             </div>
                         </div>
                     </div>
+
+
+                    <div class="row" v-if="block===5">
+                        <div class="col">
+                            <h4>Gracias por contestar nuestra encuesta</h4>
+
+                        </div>
+                    </div>
                 </div>
                 <div class="card-footer" style="background: inherit; border-color: inherit;">
-                    <a href="#" class="btn btn-rosa" v-if="block !=0" @click="goBack">Anterior</a> 
-                    <a class="btn btn-outline-primary" style="margin-left:5px" @click="nextSection">Siguiente</a>
+                    <a href="#" class="btn btn-rosa" v-if="block !=0 && block <4" @click="goBack">Anterior</a> 
+                    
+                    <a class="btn btn-outline-primary" style="margin-left:5px" v-if="block <4" @click="nextSection">Siguiente</a>
+                    <a class="btn btn-outline-primary" style="margin-left:5px" v-if="block === 4" @click="nextSection">Terminar</a>
                     
                 </div>
             </div>
@@ -275,8 +285,15 @@ export default {
   name: 'Quiz',
   components: {
   },
+  created(){
+      var hoy = moment().format("DD-MM-YYYY");
+      this.fecha = hoy
+  },
   data:function(){
       return{
+          fecha:'',
+          quiz:{},
+          terminada:false,
           block:0,
           nombre:'',
           edad:'',
@@ -345,85 +362,85 @@ export default {
         alimentos:[
             {
                 name:'verduras',
-                value:''
+                value:'Diario'
             },
             {
                 name:'frutas',
-                value:''
+                value:'Diario'
             },
             {
                 name:'frituras',
-                value:''
+                value:'Diario'
             },
             {
                 name:'carnes',
-                value:''
+                value:'Diario'
             },
             {
                 name:'pastas',
-                value:''
+                value:'Diario'
             },
             {
                 name:'pastel',
-                value:''
+                value:'Diario'
             },
             {
                 name:'mariscos',
-                value:''
+                value:'Diario'
             },
             {
                 name:'chocolates',
-                value:''
+                value:'Diario'
             },
             {
                 name:'pan',
-                value:''
+                value:'Diario'
             },
             {
                 name:'pescado',
-                value:''
+                value:'Diario'
             }
         ],
         actividadFisica:[
             {
                 name:'caminar',
-                value:''
+                value:'Diario'
             },
             {
                 name:'trotar',
-                value:''
+                value:'Diario'
             },
             {
                 name:'correr',
-                value:''
+                value:'Diario'
             },
             {
                 name:'aerobics',
-                value:''
+                value:'Diario'
             },
             {
                 name:'zumba',
-                value:''
+                value:'Diario'
             },
             {
                 name:'gym',
-                value:''
+                value:'Diario'
             },
             {
                 name:'natacion',
-                value:''
+                value:'Diario'
             },
             {
                 name:'pilates',
-                value:''
+                value:'Diario'
             },
             {
                 name:'fitness',
-                value:''
+                value:'Diario'
             },
             {
                 name:'cardio',
-                value:''
+                value:'Diario'
             }
         ]
       }
@@ -432,6 +449,21 @@ export default {
       nextSection(){
           this.block = this.block + 1
           document.documentElement.scrollTop = 0;
+          if(this.block ==5){
+              this.quiz = {
+                alimentos:this.alimentos,
+                actividadFisica:this.actividadFisica,
+                nombre:this.nombre,
+                edad:this.edad,
+                sexo:this.sexo,
+                estatura:this.estatura,
+                peso:this.peso,
+                estadoCivil:this.estadoCivil,
+                direccion:this.direccion,
+                numero:this.numero,  
+              }
+              this.saveQuiz()
+          }
       },
       goBack(){
           this.block = this.block - 1
@@ -449,7 +481,7 @@ export default {
       },
       saveQuiz(){
           db.collection("quiz")
-          .add({readed:false})
+          .add({readed:false, fecha:this.fecha,quiz:this.quiz})
           .then(() => {
             console.log("Document successfully written!");
             
