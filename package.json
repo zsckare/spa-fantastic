@@ -10,6 +10,7 @@
     "core-js": "^3.6.5",
     "firebase": "^7.17.1",
     "vue": "^2.6.11",
+    "vue-fullcalendar": "^1.0.9",
     "vue-router": "^3.2.0"
   },
   "devDependencies": {
