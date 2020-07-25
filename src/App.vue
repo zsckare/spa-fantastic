@@ -6,6 +6,11 @@
       <router-link to="/about">Acerca</router-link>
     </div>
     <router-view/>
+
+
+
+    <notifications group="citas" />
+
   </div>
 </template>
 <script>

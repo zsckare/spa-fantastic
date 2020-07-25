@@ -1,6 +1,11 @@
 <template>
   <div class="about">
+
+
+
+    
     <full-calendar :events="fcEvents" @dayClick="dayClick" locale="es"></full-calendar>
+
   </div>
 </template>
 <script>
