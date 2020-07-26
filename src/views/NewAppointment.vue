@@ -54,7 +54,7 @@
 
 
       <div class="row d-flex justify-content-center" style="margin-top:4em">
-        <div class="col-lg-6 col-sm-8 " >
+        <div class="col" >
           <div class="card">
             <div class="card-body">
               <h4 class="card-title">Agendar Cita</h4>
@@ -66,7 +66,69 @@
 
       
       <!-- modal nueva cita -->
-      <modal name="example">This is an example</modal>
+      <modal name="example" :adaptive="true" style="height:400px !important">
+        <div class="row" style="padding:1.2em">
+          <div class="col">
+            <h4>Agendar cita para {{diaCita}}</h4>
+            <div class="row">
+              <div class="col">
+                <div>
+                  <a-steps :current="current">
+                    <a-step v-for="item in steps" :key="item.title" :title="item.title" />
+                  </a-steps>
+                  <div class="steps-content">
+
+                    <div class="row" v-if="current==0">
+                      <div class="col">
+                          <a-input ref="userNameInput" v-model="userName" placeholder="Nombre">
+                            <a-icon slot="prefix" type="user" />
+                            <a-tooltip slot="suffix" title="Extra information">
+                              <a-icon type="info-circle" style="color: rgba(0,0,0,.45)" />
+                            </a-tooltip>
+                          </a-input>
+                          <br />
+                          <br />
+                          <a-input ref="userNameInput" v-model="userPhone" placeholder="telefono">
+                            <a-icon slot="prefix" type="user" />
+                            <a-tooltip slot="suffix" title="Extra information">                              
+                              <a-icon type="phone" style="color: rgba(0,0,0,.45)" />
+                            </a-tooltip>
+                          </a-input>
+                          <br />
+                          <br />
+                      </div>
+                    </div>
+
+                    <div class="row" v-if="current ==1">
+                      <div class="col">
+                        <h4>Seleccionar la hora para la cita:</h4>
+                        <a-time-picker placeholder="Click para Seleccionar"  format="h" @change="onChange" :locale="locale" :disabledHours="disabledHoursF"  />
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="steps-action">
+                    <a-button v-if="current < steps.length - 1" type="primary" @click="next">
+                      Siguiente
+                    </a-button>
+                    <a-button
+                      v-if="current == steps.length - 1"
+                      type="primary"
+                      @click="saveCita"
+                    >
+                      Hecho
+                    </a-button>
+                    <a-button v-if="current > 0" style="margin-left: 8px" @click="prev">
+                      Anterior
+                    </a-button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </modal>
 
 
 
@@ -74,12 +136,30 @@
 </template>
 <script>
 import firebase from "../firebaseConfig";
+import esES from 'ant-design-vue/lib/locale-provider/es_ES';
 const db = firebase.firestore();
 export default {
   name: 'NewAppointment',
+  
   data () {
     return {
-      fcEvents : []
+      userName:'',
+      userPhone:'',
+      locale: esES,
+      fcEvents : [],
+      diaCita:'',
+      current: 0,
+      hora:'',
+      steps: [
+        {
+          title: 'Datos',
+          content: 'First-content',
+        },
+        {
+          title: 'Hora',
+          content: 'Second-content',
+        },
+      ],
     }
   },
   mounted () {
@@ -87,10 +167,10 @@ export default {
   },
   created(){
     this.$notify({
-  group: 'citas',
-  title: 'Important message',
-  text: 'Hello user! This is a notification!'
-});
+      group: 'citas',
+      title: 'Bienvenido',
+      text: 'Selecciona un dia para agendar tu cita'
+    });
   },
   components : {
 	'full-calendar': require('vue-fullcalendar')	
@@ -98,11 +178,69 @@ export default {
   methods:{
     dayClick:function(day, event){
       console.log("preparar cita para ese dia"+day)
+      let dia = moment(day)
+      console.log(dia.format("MM-DD-YYYY"))
+      this.diaCita = dia.format("DD-MM-YYYY")
+      this.$modal.show('example')
+    },
+    onChange(time, timeString) {
+      console.log(time, timeString);
+      console.log(JSON.stringify(time))
+      console.log(timeString)
+      this.hora = timeString
+    },
+    disabledHoursF(){
+      return [0,1, 2, 3,4,5,6,7,8,9,10,21,22,23,24]
+    },
+    next() {
+      this.current++;
+    },
+    prev() {
+      this.current--;
+    },
+    saveCita(){
+      db.collection("citas")
+          .add({
+            nombre: this.userName,
+            telefono: this.userPhone,
+            dia: this.diaCita,
+            hora: this.hora
+          })
+          .then(() => {
+            this.$notify({
+              group: 'citas',
+              title: 'Listo',
+              text: 'Se ha agendado tu cita'
+            });
+            this.$modal.hideAll()
+            
+          })
+          .catch((error) => {
+            console.error("Error writing document: ", error);
+          });
     }
+    
   }
 
   
 }
 </script>
 <style >
+
+.steps-content {
+  margin-top: 16px;
+  border: 1px dashed #e9e9e9;
+  border-radius: 6px;
+  background-color: #fafafa;
+  min-height: 200px;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.steps-action {
+  margin-top: 24px;
+}
+.vm--modal{
+  height:400px !important
+}
 </style>
