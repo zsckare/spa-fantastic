@@ -6,13 +6,17 @@ import VModal from 'vue-js-modal'
 import Notifications from 'vue-notification'
 import TimePicker from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css';
+import VueModalTor from "vue-modaltor";
+
+
 Vue.component('full-calendar', fullCalendar)
 
 Vue.config.productionTip = false
-
+Vue.use(VueModalTor);
 Vue.use(VModal)
 Vue.use(Notifications)
 Vue.use(TimePicker)
+
 
 new Vue({
   router,

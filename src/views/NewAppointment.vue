@@ -66,8 +66,26 @@
 
       
       <!-- modal nueva cita -->
-      <modal name="example" :adaptive="true" style="height:400px !important">
-        <div class="row" style="padding:1.2em">
+     
+
+<vue-modaltor :visible="open" @hide="hideModal">
+  <template slot="close-icon">
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 40 40"
+      width="20"
+      height="20"
+      xml:space="preserve"
+    >
+      <path
+        class="st0"
+        fill="#41b883"
+        d="M8.7,7.6c-0.4-0.4-1-0.4-1.4,0C6.9,8,6.9,8.6,7.3,9l11,11l-11,11c-0.4,0.4-0.4,1,0,1.4c0.4,0.4,1,0.4,1.4,0 l11-11l11,11c0.4,0.4,1,0.4,1.4,0c0.4-0.4,0.4-1,0-1.4l-11-11L32,9c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0l-11,11L8.7,7.6z"
+      />
+    </svg>
+  </template>
+  <div class="row" style="padding:1.2em">
           <div class="col">
             <h4>Agendar cita para {{diaCita}}</h4>
             <div class="row">
@@ -106,6 +124,50 @@
                       </div>
                     </div>
 
+                    <div class="row" v-if="current ==2">
+                      <div class="col">
+                        <h4>Seleccionar el servicio para la cita:</h4>
+                          <div class="row " v-if="block === 1">
+                          <div class="col">
+                              <div class="row">
+                                  <div class="col">
+                                      <h4 class="center-text">Tipo de servicio</h4>   
+                                  </div>
+                              </div>
+                              <div class="row"  v-bind:key="service.name" v-for="(service,index) in servicios">
+                                  <div class="col">
+                                      <button class="btn btn-rosa" style="min-width:300px; margin-top:10px" @click="selectService(index)"> {{service.name}} </button>
+                                  </div>
+                              </div>
+
+                          </div>
+                      </div>
+                      <!-- end select main service -->
+
+                      <!-- start select subservice -->
+                      <div class="row " v-if="block === 2 ">
+                          <div class="col">
+                              <div class="row">
+                                  <div class="col">
+                                      <h4 class="center-text"> {{servicios[selectedServiceIndex].name}} </h4>   
+                                  </div>
+                              </div>
+                              <div class="row" :key="service" v-for="(service) in servicios[selectedServiceIndex].items ">
+                                  <div class="col">
+                                      <button class="btn btn-rosa" style="min-width:300px; margin-top:10px" @click="selectSubServiceF(service)"> {{service}} </button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row" v-if="block ===3">
+                        <div class="col">
+                          {{selectService.name}} - {{selectedSubService}}
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+
+
                   </div>
                   <div class="steps-action">
                     <a-button v-if="current < steps.length - 1" type="primary" @click="next">
@@ -128,9 +190,7 @@
             </div>
           </div>
         </div>
-      </modal>
-
-
+</vue-modaltor>
 
     </div>
 </template>
@@ -143,6 +203,10 @@ export default {
   
   data () {
     return {
+      open: false,
+      selectedService:[],
+      selectedSubService:'',
+      block:1,
       userName:'',
       userPhone:'',
       locale: esES,
@@ -159,7 +223,64 @@ export default {
           title: 'Hora',
           content: 'Second-content',
         },
+        {
+          title: 'Servicio',
+          content: 'Second-content',
+        },
       ],
+      servicios:[
+            {
+                name:'MASAJE',
+                items:[
+                  'DECONTRACTURANTE',
+                  'ESPALDA',
+                  'PIERNAS',
+                  'BRAZO',
+                  'MANOS',
+                  'PIES',
+                  'CARA',
+                  'RELAJANTE',
+                  'CUERPO COMPLETO',
+                  'DORSO',
+                  'TORSO',
+                  'ABDOMEN',
+                  'ANITI EXTREÑIMIENTO'
+              ]
+            },
+            {
+                name:'LIMPIEZAS',
+                items:[
+                'FACIAL',
+                'OIDOS',
+                'ESPALDA'
+              ]
+            },
+            {
+                name:'UÑAS',
+                items:[
+                'GELISH',
+                'ACRILICAS'
+              ]
+            },
+            {
+                name:'DEPILACION',
+                items:[
+                'BOZO',
+                'CEJA',
+                'BIKINI',
+                'MEDIA PIERNA',
+                'PIERNA COMPLETA'
+              ]
+
+            },
+            {
+                name: ' PIES Y MANOS',
+                items:[
+                'MANICURA',
+                'PEDICURA'
+              ]
+            }
+        ],
     }
   },
   mounted () {
@@ -176,12 +297,28 @@ export default {
 	'full-calendar': require('vue-fullcalendar')	
   },
   methods:{
+    hideModal(){
+      this.open = false
+    },
+    selectService(index){
+          this.selectedServiceIndex = index
+          
+          this.selectService = this.servicios[index]
+          console.log(JSON.stringify(this.selectService))
+          this.block = this.block + 1
+      },
+      selectSubServiceF(servicio){
+          this.selectedSubService = servicio
+          this.block = this.block + 1
+      },
     dayClick:function(day, event){
       console.log("preparar cita para ese dia"+day)
       let dia = moment(day)
       console.log(dia.format("MM-DD-YYYY"))
       this.diaCita = dia.format("DD-MM-YYYY")
-      this.$modal.show('example')
+      //this.$modal.show('example')
+      this.open = true
+      
     },
     onChange(time, timeString) {
       console.log(time, timeString);
@@ -199,12 +336,20 @@ export default {
       this.current--;
     },
     saveCita(){
+      let ser = this.selectService.name + " - "+this.selectedSubService
+      var m  = {nombre: this.userName,
+            telefono: this.userPhone,
+            dia: this.diaCita,
+            hora: this.hora,
+            servicio: ser}
+            console.log(m)
       db.collection("citas")
           .add({
             nombre: this.userName,
             telefono: this.userPhone,
             dia: this.diaCita,
-            hora: this.hora
+            hora: this.hora,
+            servicio: ser
           })
           .then(() => {
             this.$notify({

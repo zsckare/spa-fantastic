@@ -30,7 +30,14 @@ Vue.use(VueRouter)
     path: '/encuestas',
     name: 'ViewQuizzes',
     component: () => import( '../views/ViewQuizzes.vue')
+  },
+  {
+    path: '/citas',
+    name: 'Apointments',
+    component: () => import( '../views/Apointments.vue')
   }
+
+  
 ]
 
 const router = new VueRouter({
