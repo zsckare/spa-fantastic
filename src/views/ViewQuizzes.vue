@@ -27,6 +27,10 @@ export default {
         console.log('An error occurred while retrieving token. ', err);
         
         });
+        messaging.onMessage((payload) => {
+        console.log('Message received. ', payload);
+        // ...
+        });
     },
     methods:{
         sTopic(token){
