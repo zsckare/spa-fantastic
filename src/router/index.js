@@ -25,6 +25,11 @@ Vue.use(VueRouter)
     path: '/agendar-cita',
     name: 'NewAppointment',
     component: () => import( '../views/NewAppointment.vue')
+  },
+  {
+    path: '/encuestas',
+    name: 'ViewQuizzes',
+    component: () => import( '../views/ViewQuizzes.vue')
   }
 ]
 

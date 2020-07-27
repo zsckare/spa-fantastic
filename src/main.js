@@ -6,7 +6,6 @@ import VModal from 'vue-js-modal'
 import Notifications from 'vue-notification'
 import TimePicker from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css';
-
 Vue.component('full-calendar', fullCalendar)
 
 Vue.config.productionTip = false

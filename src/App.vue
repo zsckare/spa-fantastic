@@ -14,13 +14,34 @@
   </div>
 </template>
 <script>
-
+import firebase from "./firebaseConfig";
+const messaging = firebase.messaging();
 export default {
+  
   data:function(){
     return{
       isAuthenticated:false
     }
-  }
+  },
+  created() {
+   
+    
+
+    messaging
+    .requestPermission()
+    .then(() => firebase.messaging().getToken())
+    .then((token) => {
+        console.log(token) // Receiver Token to use in the notification
+    })
+    .catch(function(err) {
+        console.log("Unable to get permission to notify.", err);
+    });
+
+    messaging.onMessage(function(payload) {
+    console.log("Message received. ", payload);
+    // ...
+    });
+}
 }
 </script>>
 <style>
