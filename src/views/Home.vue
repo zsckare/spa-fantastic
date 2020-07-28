@@ -337,7 +337,7 @@
                                             <i class="lni-phone-handset"></i>
                                         </div>
                                         <div class="info-content">
-                                            <p>6181234567</p>
+                                            <p>6181875510</p>
                                         </div>
                                     </div> <!-- single info -->
                                 </li>
@@ -347,7 +347,7 @@
                                             <i class="lni-envelope"></i>
                                         </div>
                                         <div class="info-content">
-                                            <p>correo@gmail.com</p>
+                                            <p>spafantasticdgo@gmail.com</p>
                                         </div>
                                     </div> <!-- single info -->
                                 </li>
@@ -357,7 +357,7 @@
                                             <i class="lni-map"></i>
                                         </div>
                                         <div class="info-content">
-                                            <p>Real del Mezquital</p>
+                                            <p> Avenida de las Gaviotas 336, Real Del Mezquital</p>
                                         </div>
                                     </div> <!-- single info -->
                                 </li>
