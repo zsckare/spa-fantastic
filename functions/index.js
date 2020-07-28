@@ -5,33 +5,17 @@ admin.initializeApp(functions.config().firebase)
 
 exports.sendNotificationNewCita = functions.firestore.document('citas/{uid}').onWrite(async (event)=>{
 
-    
-    
-    console.log("Nueva cita programada")
-    
-    // functions.collection("tokens").get()
-    // .then(querySnapcht=>{
-    //     querySnapcht.forEach(doc => {
-    //         console.log(doc.id)
-    //         var tkn = doc.data().token
-    //         console.log(tkn)
-    //         // var message = {
-
-    //         //     notification:{
-    //         //         title:"Spa Fantastic",
-    //         //         body:'Se ha agendado una nueva cita'
-    //         //     },
-    //         //     token: tkn
-    //         // }
-    //         // console.log(message)
-    //         // let response = await admin.messaging().send(message)
-    //         // console.log(response)
-    //         return tkn
-    //     })
-    // })
-    // .catch(function(error) {
-    //     console.log("Error getting documents: ", error);
-    // });
+    var message = {
+        topic: 'citas',
+        notification:{
+            title:"Spa Fantastic",
+            body:'Se ha agendado una nueva cita'
+        },
+        
+    }
+    console.log(message)
+    let response = await admin.messaging().send(message)
+    console.log(response)
     
 })
 
