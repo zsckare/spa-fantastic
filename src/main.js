@@ -7,7 +7,11 @@ import Notifications from 'vue-notification'
 import TimePicker from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css';
 import VueModalTor from "vue-modaltor";
-
+import Loading from 'vue-loading-overlay';
+    // Import stylesheet
+    import 'vue-loading-overlay/dist/vue-loading.css';
+    // Init plugin
+    Vue.use(Loading);
 
 Vue.component('full-calendar', fullCalendar)
 

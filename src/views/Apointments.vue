@@ -7,7 +7,7 @@
           <a-icon type="pie-chart" />
           <span> Citas</span>
         </a-menu-item>
-        <a-menu-item key="2">
+        <a-menu-item key="2" @click="goToEncuestas">
           <a-icon type="desktop" />
           <span> Encuestas</span>
         </a-menu-item>
@@ -21,27 +21,27 @@
        
         <div :style="{ padding: '24px', background: '#fff', minHeight: '360px' }">
           <!-- Content -->
-          <h4>Citas Agendadas</h4>
-            <a-table :columns="columns" :data-source="data">
-                <a slot="name" slot-scope="text">{{ text }}</a>
-                <span slot="customTitle"><a-icon type="smile-o" /> Name</span>
-                <span slot="tags" slot-scope="tags">
-                <a-tag
-                    v-for="tag in tags"
-                    :key="tag"
-                    :color="tag === 'loser' ? 'volcano' : tag.length > 5 ? 'geekblue' : 'green'"
-                >
-                    {{ tag.toUpperCase() }}
-                </a-tag>
-                </span>
-                <span slot="action" slot-scope="text, record">
-                <a>Invite 一 {{ record.name }}</a>
-                <a-divider type="vertical" />
-                <a>Delete</a>
-                <a-divider type="vertical" />
-                <a class="ant-dropdown-link"> More actions <a-icon type="down" /> </a>
-                </span>
-            </a-table>
+          <h4>Citas agendadas</h4>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Telefono</th>
+                <th>Servicio</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr :key="cita.id" v-for="cita in citas">
+                <td>{{cita.nombre}}</td>
+                <td>{{cita.telefono}}</td>
+                <td>{{cita.servicio}}</td>
+                <td>{{cita.dia}}</td>
+                <td>{{cita.hora}}</td>
+              </tr>
+            </tbody>
+          </table>
             
           <!-- End Content -->
         </div>
@@ -54,73 +54,71 @@
 </template>
 
 <script>
-const columns = [
-  {
-    dataIndex: 'name',
-    key: 'name',
-    slots: { title: 'customTitle' },
-    scopedSlots: { customRender: 'name' },
-  },
-  {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age',
-  },
-  {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
-  },
-  {
-    title: 'Tags',
-    key: 'tags',
-    dataIndex: 'tags',
-    scopedSlots: { customRender: 'tags' },
-  },
-  {
-    title: 'Action',
-    key: 'action',
-    scopedSlots: { customRender: 'action' },
-  },
-];
+import firebase from "../firebaseConfig";
+const db = firebase.firestore();
 
-const data = [
-  {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-    tags: ['nice', 'developer'],
-  },
-  {
-    key: '2',
-    name: 'Jim Green',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-    tags: ['loser'],
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    age: 32,
-    address: 'Sidney No. 1 Lake Park',
-    tags: ['cool', 'teacher'],
-  },
-];
 
 export default {
     name:'Apointments',
     data() {
         return {
-            collapsed: false,
-            data,
-            columns,
+            collapsed: false,            
             citas:[]
         };
     },
+    created(){
+      this.getCitas()
+    },
     methods:{
-        getCitas(){
-            
+       async getCitas(){
+          var citasDB = []
+            // .collection("citas").get()
+            // .then(function(querySnapshot) {
+              
+            //     querySnapshot.forEach(function(doc) {   
+                 
+            //     });
+                
+                
+            // })
+            // .catch(function(error) {
+            //     console.log("Error getting documents: ", error);
+            // });
+
+
+
+            let ref = await db.collection("citas")
+            .onSnapshot(function(snapshot) {
+                snapshot.docChanges().forEach(function(change) {
+                    if (change.type === "added" ) {
+                        
+                         var d = change.doc.data()                
+                         console.log(change.doc.id)
+                        
+                          var c = {
+                             id:change.doc.id,
+                            nombre:d.nombre,
+                            telefono:d.telefono,
+                            servicio:d.servicio,
+                            dia:d.dia,
+                            hora:d.hora
+                          }
+                          citasDB.push(c)
+                    }
+                    if (change.type === "modified") {
+                        console.log("Modified city: ", change.doc.data());
+                    }
+                    if (change.type === "removed") {
+                        console.log("Removed city: ", change.doc.data());
+                    }
+                });
+            });
+
+            console.log(citasDB)
+            this.citas = citasDB
+        },
+        goToEncuestas(){
+          this.$router.push('encuestas');
         }
     }
 

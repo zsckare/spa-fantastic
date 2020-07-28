@@ -291,6 +291,7 @@ export default {
   },
   data:function(){
       return{
+          hora:'',
           fecha:'',
           quiz:{},
           terminada:false,
@@ -480,8 +481,10 @@ export default {
           this.block = this.block + 1
       },
       saveQuiz(){
+          const now = moment()
+          var hra = now.format("hh:mm")
           db.collection("quiz")
-          .add({readed:false, fecha:this.fecha,quiz:this.quiz})
+          .add({readed:false, fecha:this.fecha,quiz:this.quiz,hora: hra})
           .then(() => {
             console.log("Document successfully written!");
             

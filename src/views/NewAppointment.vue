@@ -335,7 +335,7 @@ export default {
     prev() {
       this.current--;
     },
-    saveCita(){
+    async saveCita(){
       let ser = this.selectService.name + " - "+this.selectedSubService
       var m  = {nombre: this.userName,
             telefono: this.userPhone,
@@ -343,7 +343,7 @@ export default {
             hora: this.hora,
             servicio: ser}
             console.log(m)
-      db.collection("citas")
+      let saving = await db.collection("citas")
           .add({
             nombre: this.userName,
             telefono: this.userPhone,
@@ -352,17 +352,20 @@ export default {
             servicio: ser
           })
           .then(() => {
-            this.$notify({
-              group: 'citas',
-              title: 'Listo',
-              text: 'Se ha agendado tu cita'
-            });
-            this.$modal.hideAll()
+
+              console.log("Se ha agendado la cita")
             
           })
           .catch((error) => {
             console.error("Error writing document: ", error);
           });
+          this.open = false
+
+            this.$notify({
+              group: 'citas',
+              title: 'Listo',
+              text: 'Se ha agendado tu cita'
+            });
     }
     
   }
