@@ -450,6 +450,7 @@ export default {
       nextSection(){
           this.block = this.block + 1
           document.documentElement.scrollTop = 0;
+          var s  = this.servicios[this.selectedServiceIndex].name + " - " + this.selectedSubService
           if(this.block ==5){
               this.quiz = {
                 alimentos:this.alimentos,
@@ -461,7 +462,8 @@ export default {
                 peso:this.peso,
                 estadoCivil:this.estadoCivil,
                 direccion:this.direccion,
-                numero:this.numero,  
+                numero:this.numero,
+                servicio: s
               }
               this.saveQuiz()
           }

@@ -70,7 +70,7 @@ export default {
       this.getCitas()
     },
     methods:{
-       async getCitas(){
+        async getCitas(){
           var citasDB = []
             // .collection("citas").get()
             // .then(function(querySnapshot) {

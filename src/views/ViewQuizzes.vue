@@ -3,7 +3,7 @@
     <a-layout-sider v-model="collapsed" collapsible>
       <div class="logo" />
       <a-menu theme="dark" :default-selected-keys="['2']" mode="inline">
-        <a-menu-item key="1">
+        <a-menu-item key="1" @click="goToCitas">
           <a-icon type="pie-chart" />
           <span> Citas</span>
         </a-menu-item>
@@ -31,11 +31,11 @@
                 </tr>
               </thead>
               <tbody>
-                <tr :key="quiz.id" v-for="quiz in quizzes">
+                <tr :key="quiz.id" v-for="(quiz,index) in quizzes">
                     <td>{{quiz.fecha}}</td>
                     <td>{{quiz.hora}}</td>
                     <td>
-                        <a-button type="primary">
+                        <a-button type="primary" @click="verQuiz(index)">
                           Ver 
                         </a-button>
                     </td>
@@ -43,11 +43,88 @@
               </tbody>
             </table>
             
+
+            <vue-modaltor :visible="open" @hide="hideModal">
+              <template slot="close-icon">
+                <svg
+                  version="1.1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 40 40"
+                  width="20"
+                  height="20"
+                  xml:space="preserve"
+                >
+                  <path
+                    class="st0"
+                    fill="#41b883"
+                    d="M8.7,7.6c-0.4-0.4-1-0.4-1.4,0C6.9,8,6.9,8.6,7.3,9l11,11l-11,11c-0.4,0.4-0.4,1,0,1.4c0.4,0.4,1,0.4,1.4,0 l11-11l11,11c0.4,0.4,1,0.4,1.4,0c0.4-0.4,0.4-1,0-1.4l-11-11L32,9c0.4-0.4,0.4-1,0-1.4c-0.4-0.4-1-0.4-1.4,0l-11,11L8.7,7.6z"
+                  />
+                </svg>
+              </template>
+
+              <div class="row">
+                <div class="col">
+                    <h4>Encuesta</h4>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>Nombre</th>
+                          <th>Edad</th>
+                          <th>Sexo</th>
+                          <th>Peso</th>
+                          <th>Estado Civil</th>
+                          <th>Numero</th>
+                          <th>Direccion</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            {{currentQuiz.nombre}}
+                          </td>
+                          <td>
+                            {{currentQuiz.edad}}
+                          </td>
+                          <td>
+                            {{currentQuiz.sexo}}
+                          </td>
+                          <td>
+                            {{currentQuiz.peso}}
+                          </td>
+                          <td>
+                            {{currentQuiz.estadoCivil}}
+                          </td>
+                          <td>
+                            {{currentQuiz.numero}}
+                          </td>
+                          <td>
+                            {{currentQuiz.direccion}}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <div class="row">
+                      <div class="col">
+                        <h4>Servicio: {{currentQuiz.servicio}} </h4>
+                        <h4>Alimentacion:</h4>
+                        <p :key="alimentacion.name" v-for="alimentacion in currentQuiz.alimentos">
+                            <span style="text-transform: uppercase">{{alimentacion.name}}</span> - {{alimentacion.value}}
+                        </p>
+                        <h4>Actividad Fisica</h4>
+                        <p :key="actividadFisica.name" v-for="actividadFisica in currentQuiz.actividadFisica"  >
+                          <span style="text-transform:uppercase">{{actividadFisica.name}} </span> - {{actividadFisica.value}}
+                        </p>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </vue-modaltor>
           <!-- End Content -->
         </div>
       </a-layout-content>
       <a-layout-footer style="text-align: center">
-        Ant Design ©2018 Created by Ant UED
+        
       </a-layout-footer>
     </a-layout>
   </a-layout>
@@ -66,7 +143,9 @@ export default {
         isLoading: false,
         fullPage: true,
         collapsed: false,
-        quizzes:[]
+        quizzes:[],
+        currentQuiz:{},
+        open:false
       };
     },
     created(){
@@ -157,7 +236,20 @@ export default {
             this.isLoading = false
             setTimeout(() => {
                   loader.hide()
-                },5000)    
+                },3000)    
+        },
+        verQuiz(index){
+          var qzz = this.quizzes
+          console.log(qzz[index])
+           this.currentQuiz = qzz[index].content
+           console.log(this.currentQuiz)
+           this.open = true
+        },
+        hideModal(){
+          this.open = false
+        },
+        goToCitas(){
+          this.$router.push('citas');
         }
     }
 }
