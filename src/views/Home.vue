@@ -134,7 +134,19 @@
                         </div>
                         <div class="services-content mt-15">
                             <h4 class="services-title">Masajes</h4>
-                            <p class="mt-20"></p>
+                            <p class="mt-20">DECONTRACTURANTE,
+                  ESPALDA,
+                  PIERNAS,
+                  BRAZO,
+                  MANOS,
+                  PIES,
+                  CARA,
+                  RELAJANTE,
+                  CUERPO COMPLETO,
+                  DORSO,
+                  TORSO,
+                  ABDOMEN,
+                  ANTI EXTREÑIMIENTO</p>
                         </div>
                     </div> <!-- single services -->
                 </div>
@@ -145,7 +157,11 @@
                         </div>
                         <div class="services-content mt-15">
                             <h4 class="services-title">Limpiezas</h4>
-                            <p class="mt-20">Mauris aliquam, turpis sed mattis placerat, justo risus pellentesque quam, id finibus risus arcu eget neque.</p>
+                            <p class="mt-20">
+                                FACIAL,
+                                OIDOS,
+                                ESPALDA
+                            </p>
                         </div>
                     </div> <!-- single services -->
                 </div>
@@ -156,7 +172,9 @@
                         </div>
                         <div class="services-content mt-15">
                             <h4 class="services-title">Uñas</h4>
-                            <p class="mt-20">Mauris aliquam, turpis sed mattis placerat, justo risus pellentesque quam, id finibus risus arcu eget neque.</p>
+                            <p class="mt-20"> GELISH,
+                            ACRILICAS
+                            </p>
                         </div>
                     </div> <!-- single services -->
                 </div>
@@ -167,7 +185,27 @@
                         </div>
                         <div class="services-content mt-15">
                             <h4 class="services-title">Pies y Manos</h4>
-                            <p class="mt-20">Mauris aliquam, turpis sed mattis placerat, justo risus pellentesque quam, id finibus risus arcu eget neque.</p>
+                            <p class="mt-20">
+                                MANICURA,
+                                PEDICURA
+                            </p>
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
+                        <div class="services-icon">
+                            <i class="customi-belleza"></i>
+                        </div>
+                        <div class="services-content mt-15">
+                            <h4 class="services-title">Depilacion</h4>
+                            <p class="mt-20">
+                               BOZO,
+                               CEJA,
+                               BIKINI,
+                               MEDIA PIERNA,
+                               PIERNA COMPLETA
+                            </p>
                         </div>
                     </div> <!-- single services -->
                 </div>
@@ -262,7 +300,107 @@
 
     <!--====== TEAM PART START ======-->
 
-
+    <section id="team" class="team-area pt-125 pb-130 gray-bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-title text-center pb-20">
+                        <h5 class="sub-title mb-15">Precios</h5>
+                        <h2 class="title">Conoce nuestros precios</h2>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-team text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
+                        <div class="team-image">
+                            <img src="../assets/masaje.jpg" alt="Team">
+                        </div>
+                        <div class="team-content">
+                            <h4 class="team-name"><a href="#">Masajes</a></h4>
+                            <span class="sub-title"></span>
+                            <ul class="social mt-25">
+                                <li>RELAJANTE - $350</li>
+                                <li>PIEDRAS CALIENTES - $400</li>
+                                <li>Descontracturante - $450</li>
+                                <li>Reflexivo - $150(Por Area)</li>
+                                <li>TERAPÉUTICO Descontracturante/digestivo - $600</li>
+                            </ul>
+                        </div>
+                    </div> <!-- single team -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-team text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.8s">
+                        <div class="team-image">
+                            <img src="../assets/limpieza.jpeg" alt="Team">
+                        </div>
+                        <div class="team-content">
+                            <h4 class="team-name"><a href="#">Limpieza</a></h4>
+                            <span class="sub-title"></span>
+                            <ul class="social mt-25">
+                                <li>CONOTERAPIA - $200</li>
+                                <li>FACIAL SENCILLO - $350</li>
+                                <li>FACIAL OZONO - $1000</li>
+                                <li>ESPALDA - $200</li>                                
+                            </ul>
+                        </div>
+                    </div> <!-- single team -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-team text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.2s">
+                        <div class="team-image">
+                            <img src="../assets/gelish.jpg" alt="Team">
+                        </div>
+                        <div class="team-content">
+                            <h4 class="team-name"><a href="#">Uñas</a></h4>
+                            <span class="sub-title"></span>
+                            <ul class="social mt-25">
+                                <li>GELISH SENCILLO - $100</li>
+                                <li>GELISH DECORADO - $200</li>
+                                <li>ACRILICAS SENCILLAS - $250</li>
+                                <li>ACRILICAS DECORADAS - $ 350</li>
+                                
+                            </ul>
+                        </div>
+                    </div> <!-- single team -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-team text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.6s">
+                        <div class="team-image">
+                            <img src="../assets/cera.jpg" alt="Team">
+                        </div>
+                        <div class="team-content">
+                            <h4 class="team-name"><a href="#">Depilacion</a></h4>
+                            <span class="sub-title"></span>
+                            <ul class="social mt-25">
+                                <li>BOZO - $200</li>
+                                <li>CEJA - $200</li>
+                                <li>BIKINI - $350</li>
+                                <li>MEDIA PIERNA - $500</li>
+                                <li>PIERNA COMPLETA - $1200</li>
+                            </ul>
+                        </div>
+                    </div> <!-- single team -->
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-team text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.6s">
+                        <div class="team-image">
+                            <img src="../assets/manicura.jpeg" alt="Team">
+                        </div>
+                        <div class="team-content">
+                            <h4 class="team-name"><a href="#">Pies y Manos</a></h4>
+                            <span class="sub-title"></span>
+                            <ul class="social mt-25">
+                                <li>MANICURA SIN GELISH - $150</li>
+                                <li>MANICURA CON GELISH - $200</li>
+                                <li>PEDICURA SIN GELISH - $300</li>
+                            </ul>
+                        </div>
+                    </div> <!-- single team -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
     <!--====== TEAM PART ENDS ======-->
 
     <!--====== TESTIMONIAL PART START ======-->
